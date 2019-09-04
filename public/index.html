@@ -9,50 +9,35 @@
   <meta property="og:description" content="Sample application that shows how to use the Watson Assistant API to identify user intents" />
   <link rel="shortcut icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
-  <div id="view-change-button" class="button" onclick="PayloadPanel.togglePanel(event, this)">
-    <img class="option full" src="../img/Chat Button.png">
-    <img class="option not-full" src="../img/Code Button.png">
-  </div>
-  <div id="contentParent" class="responsive-columns-wrapper">
-    <div id="chat-column-holder" class="responsive-column content-column">
-      <div class="chat-column">
-        <div id="scrollingChat"></div>
-        <p class="user-typing" id="user-typing-field"></p>
-        <label for="textInput" class="inputOutline">
-          <input id="textInput" class="input responsive-column" placeholder="Type something" type="text" onkeydown="ConversationPanel.inputKeyDown(event, this)"
-            autofocus>
-        </label>
-        <div class="disclaimer">
-          * This system is for demonstration purposes only and is not intended to process Personal Data. No Personal
-          Data is to be entered
-          into this system as it may not have the necessary controls in place to meet the requirements of the General
-          Data Protection
-          Regulation (EU) 2016/679.
+   <div class="container">
+   <div class="row align">
+    <div class="col-sm-8" style="margin-top: 25px;">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Leave a message</h3>
+            </div>
+            <div class="panel-body">
+                <div id="scrollingChat" style="height: 200px;overflow-y: auto"></div>
+            </div>
+            <div class="panel-footer">
+                <div class="form-group">
+                    <label for="textInput" >
+                    <input type="text" id="textInput" class="form-control" value="" placeholder="Type your query...." onkeydown="ConversationPanel.inputKeyDown(event, this)"  autofocus>
+                  </label>
+                </div>
+            </div>
         </div>
-        <div class="disclaimer">
-          By using this application, you agree to the&nbsp;
-          <a target="_blank" rel="noreferrer noopener" href="https://watson-developer-cloud.github.io/terms?name=Watson%20Assistant%20Demo">
-            Terms of Use
-          </a>
-        </div>
-      </div>
     </div>
-    <div id="payload-column" class="fixed-column content-column">
-      <div id="payload-initial-message">
-        Type something to see the output
-      </div>
-      <div id="payload-request" class="payload"></div>
-      <div id="payload-response" class="payload"></div>
-    </div>
-  </div>
+</div>
+</div>
 
   <script src="js/common.js"></script>
   <script src="js/api.js"></script>
   <script src="js/conversation.js"></script>
-  <script src="js/payload.js"></script>
   <script src="js/global.js"></script>
   <script type="text/javascript" src="https://cdn.rawgit.com/watson-developer-cloud/watson-developer-cloud.github.io/master/analytics.js"></script>
 </body>

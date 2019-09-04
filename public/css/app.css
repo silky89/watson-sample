@@ -130,10 +130,10 @@ div {
 
 .from-user .message-inner {
   position: relative;
-  font-size: 1rem;
+  font-size: 2rem;
   color: #fff;
   letter-spacing: 0.015rem;
-  line-height: 1.3125rem;
+  line-height: 2.2rem;
   background: #00B4A0;
   border-radius: 1.25rem;
   border-bottom-right-radius: 0;
@@ -144,7 +144,7 @@ div {
 }
 
 .from-user .message-inner p {
-  margin: 0.3125rem;
+  margin: 0.313rem;
   padding: 0 0.9375rem;
 }
 
@@ -185,11 +185,13 @@ div {
 
 .from-watson.latest .message-inner {
   color: #323232;
+  font-size: 2rem;
 }
 
 .from-watson p {
   margin: 0.3125rem;
   padding: 0 1.25rem;
+  font-size: 2rem;
 }
 
 .from-watson.latest.top p:before {
@@ -206,20 +208,19 @@ div {
 }
 
 #textInput {
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 1rem;
-  color: #323232;
-  letter-spacing: 0.015rem;
+  font-size: 2rem;
   line-height: 1.3125rem;
-  height: 2.5rem;
-  max-width: 100%;
-  padding-left: 0.125rem;
+ padding-left: 0.125rem;
   margin-bottom: -0.125rem;
   font-family: Helvetica Neue for IBM, Helvetica Neue, Helvetica, Arial, sans-serif;
+  width: 715px;
+  padding: 2.125rem;
+  
 
 }
+.panel-footer {
+  padding: 10px 15px 0px !important;
+  }
 
 #textInput.underline {
   border-bottom: 2px solid #00B4A0;

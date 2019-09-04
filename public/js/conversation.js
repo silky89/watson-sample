@@ -113,8 +113,8 @@ var ConversationPanel = (function () {
     }
 
     // Any time the input changes, or the window resizes, adjust the size of the input box
-    input.addEventListener('input', adjustInput);
-    window.addEventListener('resize', adjustInput);
+    // input.addEventListener('input', adjustInput);
+    // window.addEventListener('resize', adjustInput);
 
     // Trigger the input event once to set up the input box and dummy element
     Common.fireEvent(input, 'input');

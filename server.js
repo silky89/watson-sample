@@ -1,28 +1,18 @@
-#!/usr/bin/env
-/**
- * Copyright 2015 IBM Corp. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+var http 		     = require('http');
+var express 	   = require('express');
+var app 		     = express();
+var bodyParser 	 = require('body-parser');
+const cors     	 = require('cors');
 
-'use strict';
+require('dotenv').config();
+app.use(express.static('./public')); // load UI from public folder
+app.use(bodyParser.json());
+app.use(cors());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
-require('dotenv').config({silent: true});
-
-var server = require('./app');
-var port = process.env.PORT || 3000;
-
-server.listen(port, function() {
-  // eslint-disable-next-line
-  console.log('Server running on port: %d', port);
+app.use('/',require('./app/routes/chatbotRoutes.js')); //Call all chatbot API routes
+var server = app.listen(3000, function() {
+    console.log("app running on 3000");
 });
